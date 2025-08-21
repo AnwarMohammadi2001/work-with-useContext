@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="min-h-screen w-full dark:bg-gray-800 transition-colors duration-300">
       <Navbar />
-      <div className="max-w-lg mx-auto overflow-y-scroll max-h-[400px] mt-10 border rounded-md">
+      <div className="max-w-7xl mx-auto overflow-y-scroll max-h-[500px] mt-10 border  border-gray-200">
         <Post />
       </div>
     </div>

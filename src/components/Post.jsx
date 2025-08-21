@@ -3,19 +3,19 @@ import { AppContext } from "../Context/Context";
 
 const Post = () => {
   const { data } = useContext(AppContext);
-  const [visiable, setVisiable] = useState(5);
+  const [visiable, setVisiable] = useState(6);
 
   const handleVisiable = () => {
     setVisiable((prev) => prev + 5);
   };
 
   const handleShowLess = () => {
-    setVisiable((prev) => Math.max(prev - 5, 0));
+    setVisiable((prev) => Math.max(prev - 6, 0));
   };
 
   return (
     <div className="p-6 min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
-      <div className="grid gap-6 max-w-4xl mx-auto">
+      <div className="grid gap-6  grid-cols-3 mx-auto">
         {data && data.length > 0 ? (
           data.slice(0, visiable).map((post) => (
             <div
@@ -57,7 +57,7 @@ const Post = () => {
           {Math.min(visiable, data.length)} / {data.length}
         </div>
 
-        {visiable > 5 && (
+        {visiable > 6 && (
           <button
             onClick={handleShowLess}
             className="bg-gradient-to-r from-gray-700 to-black hover:from-black hover:to-gray-800 

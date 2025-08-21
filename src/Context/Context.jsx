@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Create Context
 export const AppContext = createContext();
@@ -6,6 +7,7 @@ export const AppContext = createContext();
 export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+ 
 
   // Initialize theme based on system preference if not in localStorage
   useEffect(() => {
@@ -45,6 +47,7 @@ export const ContextProvider = ({ children }) => {
     theme,
     setTheme,
     data,
+   
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
