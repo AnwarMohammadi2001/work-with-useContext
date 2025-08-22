@@ -15,8 +15,13 @@ const Post = () => {
   };
 
   return (
-    <div className="p-6">
+    <div id="posts" className="p-6">
       {/* Grid of Posts */}
+      <div className="">
+        <h1 className="text-center text-2xl font-bold py-2 dark:text-white">
+          All Post
+        </h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {data.slice(0, visible).map((post, index) => (
           <PostCard post={post} index={index} key={index} />

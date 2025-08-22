@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
-import { FaSun, FaUser } from "react-icons/fa6";
-import { FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
 import { AppContext } from "../Context/Context";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { UserButton, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const { theme, setTheme } = useContext(AppContext);
-  const navigate = useNavigate();
 
   return (
     <nav className="sticky top-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm z-50">
@@ -19,6 +17,34 @@ const Navbar = () => {
         >
           Test
         </Link>
+
+        {/* Nav Items */}
+        <div className="hidden md:flex items-center gap-x-6 font-medium">
+          <a
+            href="#posts"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Posts
+          </a>
+          <a
+            href="#users"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Users
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Contact
+          </a>
+          <a
+            href="#gallery"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Gallery
+          </a>
+        </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-x-4">

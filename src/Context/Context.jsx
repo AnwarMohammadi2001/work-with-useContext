@@ -6,8 +6,8 @@ export const AppContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [user, setUser] = useState([]);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
- 
 
   // Initialize theme based on system preference if not in localStorage
   useEffect(() => {
@@ -42,12 +42,24 @@ export const ContextProvider = ({ children }) => {
     };
     fetchData();
   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+        const result = await res.json();
+        setUser(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const value = {
     theme,
     setTheme,
     data,
-   
+    user,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
