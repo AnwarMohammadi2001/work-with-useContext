@@ -6,7 +6,7 @@ const Post = () => {
   const [visiable, setVisiable] = useState(6);
 
   const handleVisiable = () => {
-    setVisiable((prev) => prev + 5);
+    setVisiable((prev) => prev + 6);
   };
 
   const handleShowLess = () => {
@@ -14,7 +14,7 @@ const Post = () => {
   };
 
   return (
-    <div className="p-6 min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
+    <div className="p-6  bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
       <div className="grid gap-6  grid-cols-3 mx-auto">
         {data && data.length > 0 ? (
           data.slice(0, visiable).map((post) => (

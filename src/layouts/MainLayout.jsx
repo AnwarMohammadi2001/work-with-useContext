@@ -4,9 +4,9 @@ import Navbar from "../components/Navbar";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col dark:bg-gray-800">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow ">
         <Outlet /> {/* Nested route renders here */}
       </main>
       {/* <Footer /> */}
