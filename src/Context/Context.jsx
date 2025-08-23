@@ -7,6 +7,7 @@ export const AppContext = createContext();
 export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
+  const [gallery, setGallary] = useState([]);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   // Initialize theme based on system preference if not in localStorage
@@ -54,12 +55,27 @@ export const ContextProvider = ({ children }) => {
     };
     fetchData();
   }, []);
+  useEffect(() => {
+    const fetchGallary = async () => {
+      try {
+        const res = await fetch(
+          "https://jsonplaceholder.typicode.com/photos?_limit=8"
+        );
+        const result = await res.json();
+        setGallary(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchGallary();
+  }, []); // ✅ Don't forget dependency array
 
   const value = {
     theme,
     setTheme,
     data,
     user,
+    gallery,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

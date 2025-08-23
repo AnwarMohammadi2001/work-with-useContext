@@ -33,16 +33,16 @@ const Navbar = () => {
             Users
           </a>
           <a
-            href="#contact"
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            Contact
-          </a>
-          <a
             href="#gallery"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
             Gallery
+          </a>
+          <a
+            href="#contactus"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Contact
           </a>
         </div>
 

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 export default function MainLayout() {
   return (
@@ -9,7 +9,7 @@ export default function MainLayout() {
       <main className="flex-grow ">
         <Outlet /> {/* Nested route renders here */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
